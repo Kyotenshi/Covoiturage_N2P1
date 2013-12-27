@@ -18,3 +18,4 @@ public class Test {
 	}
 
 }
+ /*Ceci est un code ajouter par Jérôme... Noraj de mon passage */
