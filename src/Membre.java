@@ -10,6 +10,7 @@ public class Membre {
 	private String preference;
 	private String role;
 	
+	/* Classe Membre Vide*/
 	public Membre(){
 		this.nom = "[Non definie]";
 		this.prenom = "[Non definie]";
@@ -20,6 +21,8 @@ public class Membre {
 		this.role = "[Non definie]";
 	}
 	
+	
+	/* Classe Membre Non Vide*/	
 	public Membre(String nom, String prenom, String adresse, String mail, int telephone, String preference, String role){
 		this.nom = nom;
 		this.prenom = prenom;
@@ -32,7 +35,7 @@ public class Membre {
 	
 	
 	
-	/* Methode d'edition de voiture */
+	/* Methode d'edition de Membre */
 	public void editionMembre(){
 		Scanner clavier = new Scanner(System.in);
 
@@ -123,7 +126,7 @@ public class Membre {
 		this.role = role;
 	}
 
-	@Override
+	/* ToString */
 	public String toString() {
 		return "Membre "+
 				"\n Nom : " + nom + 
@@ -134,12 +137,5 @@ public class Membre {
 				"\n Preference : " + preference + 
 				"\n Role : " + role;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
