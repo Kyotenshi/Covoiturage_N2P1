@@ -125,7 +125,7 @@ public class Membre {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
+ 
 	/* ToString */
 	public String toString() {
 		return "Membre "+

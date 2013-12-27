@@ -63,7 +63,7 @@ public class Voiture {
 	public void setNbPlaces(int nbPlaces) {
 		this.nbPlaces = nbPlaces;
 	}
-
+ 
 	/* ToString */
 	public String toString() {
 		return "Il s'agit d'une " + marqueVoiture + " "+ modeleVoiture + ", qui dispose de " + nbPlaces + " places libres.";

@@ -124,7 +124,7 @@ public class Trajet {
 		return "Trajet "+
 				"\n Addresse Destination : " + addresseDestination + 
 				"\n Addresse Depart : " + addresseDepart + 
-				"\n Ville Destination : " + villeDestination + 
+		 		"\n Ville Destination : " + villeDestination + 
 				"\n Ville Depart : " + villeDepart + 
 				"\n Heure Depart : " + heureDepart + 
 				"\n Description : " + description;
