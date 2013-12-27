@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Voiture {
 	private String marqueVoiture;
 	private String modeleVoiture;
@@ -36,35 +35,35 @@ public class Voiture {
 		System.out.println("Combien de places disponibles dans votre voiture ?");
 		int place = clavier.nextInt();
 		setNbPlaces(place);
-		clavier.close();
+
 	}
 	
-	/* Setters */
-	public void setMarqueVoiture(String marqueVoiture) {
-		this.marqueVoiture = marqueVoiture;
-	}
 
-	public void setModeleVoiture(String modeleVoiture) {
-		this.modeleVoiture = modeleVoiture;
-	}
-
-	public void setNbPlaces(int nbPlaces) {
-		this.nbPlaces = nbPlaces;
-	}
-
-	/* Getter */
+	/* Getters Setters */
 	public String getMarqueVoiture() {
 		return marqueVoiture;
+	}
+
+	public void setMarqueVoiture(String marqueVoiture) {
+		this.marqueVoiture = marqueVoiture;
 	}
 
 	public String getModeleVoiture() {
 		return modeleVoiture;
 	}
 
+	public void setModeleVoiture(String modeleVoiture) {
+		this.modeleVoiture = modeleVoiture;
+	}
+
 	public int getNbPlaces() {
 		return nbPlaces;
 	}
-	
+
+	public void setNbPlaces(int nbPlaces) {
+		this.nbPlaces = nbPlaces;
+	}
+
 	/* ToString */
 	public String toString() {
 		return "Il s'agit d'une " + marqueVoiture + " "+ modeleVoiture + ", qui dispose de " + nbPlaces + " places libres.";
