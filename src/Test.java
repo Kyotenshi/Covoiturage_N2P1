@@ -6,10 +6,9 @@ public class Test {
 	
 		Voiture voiture1 = new Voiture();
 		voiture1.editionVoiture();
-		
 		System.out.println(voiture1.toString());
 
 	}
 
 }
- /*Ceci est un code ajouté par Jérôme*/
+ /*Ceci est un code ajoute par Jerome*/

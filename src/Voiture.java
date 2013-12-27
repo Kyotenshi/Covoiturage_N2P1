@@ -8,8 +8,8 @@ public class Voiture {
 
 	/* Classe Voiture Vide*/
 	public Voiture(){
-		this.marqueVoiture = "[Non définie]";
-		this.modeleVoiture = "[Non définie]";
+		this.marqueVoiture = "[Non definie]";
+		this.modeleVoiture = "[Non definie]";
 		this.nbPlaces = -1;
 	}
 	
@@ -21,7 +21,7 @@ public class Voiture {
 	}
 	
 	
-	/* Méthode d'édition de voiture */
+	/* Methode d'edition de voiture */
 	public void editionVoiture(){
 		Scanner clavier = new Scanner(System.in);
 		
