@@ -12,7 +12,7 @@ public class Trajet {
 	private String villeDestination;
 	private String villeDepart;
 	private int heureDepart;
-	private Membre auteur;
+//	private Membre auteur;
 	private String description;
 	
 	/* Classe Trajet Vide*/
@@ -22,7 +22,7 @@ public class Trajet {
 		this.villeDestination = "[Non definie]";
 		this.villeDepart = "[Non definie]";
 		this.heureDepart = -1;
-		this.auteur = null;
+//		this.auteur = null;
 		this.description = "[Non definie]";
 	}
 	
@@ -34,7 +34,7 @@ public class Trajet {
 		this.villeDestination = villeDestination;
 		this.villeDepart = villeDepart;
 		this.heureDepart = heureDepart;
-		this.auteur = auteur;
+//		this.auteur = auteur;
 		this.description = description;
 	}
 	

@@ -25,4 +25,8 @@ par Ghesquiere Jérôme, Hennache Johan et Bisiaux Guillaume
 	- Inscription d'un membre à un trajet
 	- Création de 2 .csv afin d'enregistrer les membres inscrits, les trajets disponibles, etc...
 	
+5. Notes 
+
+	- Les flux io sont biens plus difficile à gérer que ce que je pensais.
+	
 	
