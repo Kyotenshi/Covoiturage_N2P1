@@ -66,6 +66,8 @@ public class Membre {
 		System.out.println("Telephone : ");
 		int telephone = clavier.nextInt();
 		setTelephone(telephone);
+		
+		clavier.close();
 
 	}
 

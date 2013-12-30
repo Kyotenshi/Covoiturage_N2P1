@@ -35,6 +35,8 @@ public class Voiture {
 		System.out.println("Combien de places disponibles dans votre voiture ?");
 		int place = clavier.nextInt();
 		setNbPlaces(place);
+		
+		clavier.close();
 
 	}
 	

@@ -66,6 +66,8 @@ public class Trajet {
 		System.out.println("HeureDepart : ");
 		int heureDepart = clavier.nextInt();
 		setHeureDepart(heureDepart);
+		
+		clavier.close();
 
 	}
 
