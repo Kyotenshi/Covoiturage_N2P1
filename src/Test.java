@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Test {
 
 	public static void main(String[] args) {
-		// final char SEPARATEUR = ',';
+		//final char SEPARATEUR = ',';
 		FileInputStream fis = null;
 		FileOutputStream fos = null;
 		int choix;
@@ -83,10 +83,10 @@ public class Test {
 				// On affiche ce qu'a lu notre boucle au format byte et au
 				// format char
 				for (byte bit : buf) {
-					System.out.print("\t" + bit + "(" + (char) bit + ")");
-					System.out.println("");
+					System.out.print((char) bit);
 				}
 			}
+
 			System.out.println("Copie terminée !");
 
 		} catch (FileNotFoundException e) {
