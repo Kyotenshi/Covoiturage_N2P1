@@ -21,7 +21,7 @@ public class Test {
 		System.out.println("1. Créer un compte");
 		System.out.println("2. Créer un trajet");
 		System.out.println("3. Gestion du trajet");
-		System.out.println("4.Gestion du véhicule");
+		System.out.println("4. Gestion du véhicule");
 		Scanner menu = new Scanner(System.in);
 
 		do {
