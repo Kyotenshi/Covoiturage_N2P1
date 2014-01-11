@@ -3,6 +3,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class Test {
@@ -16,8 +17,7 @@ public class Test {
 		File f = new File("listeMembre.csv");
 
 		// Menu
-		System.out
-				.println("Bonjour et bienvenue sur le programme de coiturage \"En voiture Simone\", que souhaitez-vous faire ?");
+		System.out.println("Bonjour et bienvenue sur le programme de coiturage \"En voiture Simone\", que souhaitez-vous faire ?");
 		System.out.println("1. Créer un compte");
 		System.out.println("2. Créer un trajet");
 		System.out.println("3. Gestion du trajet");
@@ -32,21 +32,29 @@ public class Test {
 				System.out.println("Vous avez choisi de créer un compte.");
 				Membre membre1 = new Membre();
 				membre1.editionMembre();
-				System.out.println(membre1.toString());
+				try {
+					FileOutputStream fichier = new FileOutputStream("membre.csv");
+					ObjectOutputStream oos = new ObjectOutputStream(fichier);
+					oos.writeObject(membre1);
+					oos.flush();
+					oos.close();
+				}
+				catch(java.io.IOException e) {
+					e.printStackTrace();
+				}
+				//System.out.println(membre1.toString());
 				break;
 			case 2:
 				System.out.println("Vous avez choisi de créer un trajet.");
 				break;
 			case 3:
-				System.out
-						.println("Vous voulez accéder à la gestion du trajet.");
+				System.out.println("Vous voulez accéder à la gestion du trajet.");
 				Trajet trajet1 = new Trajet();
 				trajet1.editionTrajet();
 				System.out.println(trajet1.toString());
 				break;
 			case 4:
-				System.out
-						.println("Vous voulez accéder à la gestion du véhicule.");
+				System.out.println("Vous voulez accéder à la gestion du véhicule.");
 				Voiture voiture1 = new Voiture();
 				voiture1.editionVoiture();
 				System.out.println(voiture1.toString());

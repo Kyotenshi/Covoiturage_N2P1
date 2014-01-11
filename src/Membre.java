@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
 
-public class Membre {
+public class Membre implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nom;
 	private String prenom;
 	private String adresse;
