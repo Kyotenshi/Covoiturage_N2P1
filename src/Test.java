@@ -1,5 +1,6 @@
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
-
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -32,6 +33,18 @@ public class Test {
 					oos.close();
 				}
 				catch(java.io.IOException e) {
+					e.printStackTrace();
+				}
+				
+				try {
+					FileInputStream fichier = new FileInputStream("membre.csv");
+					ObjectInputStream ois = new ObjectInputStream(fichier);
+					System.out.println("Membre : ");
+					System.out.println("Nom : " + membre1.getNom());
+					System.out.println("Prenom : "+membre1.getPrenom());
+					System.out.println("Adresse : "+membre1.getAdresse());
+				} 
+				catch (java.io.IOException e) {
 					e.printStackTrace();
 				}
 				//System.out.println(membre1.toString());
