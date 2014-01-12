@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -30,6 +29,8 @@ public class Main {
 					Membre m = Affichage.afficherCreerMembre();
 					appli.ajouterMembre(m);
 					serialize();
+					break;
+				case 2:
 					break;
 				case 3:
 					Affichage.afficherMembres(appli.getMembres());

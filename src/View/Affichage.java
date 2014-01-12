@@ -5,10 +5,9 @@ import java.util.Scanner;
 
 import model.Membre;
 
-
 public class Affichage {
 	private static String bienvenueMessage = "Bienvenue sur le logiciel de Covoiturage N2P1!\n";
-	private static String menu = "MENU\n***********************************\n" +
+	private static String menu = "MENU\n--------------------\n" +
 			"1. Créer un compte\n" +
 			"2. Créer un trajet\n" +
 			"3. Voir les membres\n" +
