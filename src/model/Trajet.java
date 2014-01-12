@@ -1,117 +1,49 @@
 package model;
-//
-//editionTrajet() NE CONTIENT PAS "AUTEUR"
-// heureDepart est de type INT
-//
 
-import java.util.Scanner;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-
-public class Trajet {
-	private String addresseDestination;
-	private String addresseDepart;
-	private String villeDestination;
-	private String villeDepart;
-	private int heureDepart;
-//	private Membre auteur;
+public class Trajet implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	private String adresseDepart;
+	private String adresseArrivee;
 	private String description;
+	private Date heureDepart;
+	private int nbPlace;
+	private Membre conducteur;
 	
-	/* Classe Trajet Vide*/
-	public Trajet(){
-		this.addresseDestination = "[Non definie]";
-		this.addresseDepart = "[Non definie]";
-		this.villeDestination = "[Non definie]";
-		this.villeDepart = "[Non definie]";
-		this.heureDepart = -1;
-//		this.auteur = null;
-		this.description = "[Non definie]";
-	}
+	private List<Membre> participants;
+	private Voiture voiture;
 	
-	
-	/* Classe Trajet Non Vide*/
-	public Trajet(String addresseDestination, String addresseDepart, String villeDestination, String villeDepart, int heureDepart, Membre auteur, String description){
-		this.addresseDestination = addresseDestination;
-		this.addresseDepart = addresseDepart;
-		this.villeDestination = villeDestination;
-		this.villeDepart = villeDepart;
-		this.heureDepart = heureDepart;
-//		this.auteur = auteur;
+	public Trajet(String adresseDepart, String adresseArrivee, String description,
+			Date heureDepart, int nbPlace, Membre conducteur, Voiture voiture) {
+		this.adresseDepart = adresseDepart;
+		this.adresseArrivee = adresseArrivee;
 		this.description = description;
-	}
-	
-	
-	/* Methode d'edition de Trajet */
-	public void editionTrajet(){
-		Scanner clavier = new Scanner(System.in);
-
-		System.out.println("AddresseDestination : ");
-		String addresseDestination = clavier.nextLine();
-		setAddresseDestination(addresseDestination);
-		
-		System.out.println("AddresseDepart : ");
-		String addresseDepart = clavier.nextLine();
-		setAddresseDepart(addresseDepart);
-		
-		System.out.println("VilleDestination : ");
-		String villeDestination = clavier.nextLine();
-		setVilleDestination(villeDestination);
-		
-		System.out.println("VilleDepart : ");
-		String villeDepart = clavier.nextLine();
-		setVilleDepart(villeDepart);
-
-		System.out.println("Description : ");
-		String description = clavier.nextLine();
-		setDescription(description);
-		
-		System.out.println("HeureDepart : ");
-		int heureDepart = clavier.nextInt();
-		setHeureDepart(heureDepart);
-		
-		clavier.close();
-
-	}
-
-	
-	/* Getters Setters */
-	public String getAddresseDestination() {
-		return addresseDestination;
-	}
-
-	public void setAddresseDestination(String addresseDestination) {
-		this.addresseDestination = addresseDestination;
-	}
-
-	public String getAddresseDepart() {
-		return addresseDepart;
-	}
-
-	public void setAddresseDepart(String addresseDepart) {
-		this.addresseDepart = addresseDepart;
-	}
-
-	public String getVilleDestination() {
-		return villeDestination;
-	}
-
-	public void setVilleDestination(String villeDestination) {
-		this.villeDestination = villeDestination;
-	}
-
-	public String getVilleDepart() {
-		return villeDepart;
-	}
-
-	public void setVilleDepart(String villeDepart) {
-		this.villeDepart = villeDepart;
-	}
-
-	public int getHeureDepart() {
-		return heureDepart;
-	}
-
-	public void setHeureDepart(int heureDepart) {
 		this.heureDepart = heureDepart;
+		this.nbPlace = nbPlace;
+		this.conducteur = conducteur;
+		this.voiture = voiture;
+		participants = new ArrayList<Membre>();
+	}
+
+	public String getAdresseDepart() {
+		return adresseDepart;
+	}
+
+	public void setAdresseDepart(String adresseDepart) {
+		this.adresseDepart = adresseDepart;
+	}
+
+	public String getAdresseArrivee() {
+		return adresseArrivee;
+	}
+
+	public void setAdresseArrivee(String adresseArrivee) {
+		this.adresseArrivee = adresseArrivee;
 	}
 
 	public String getDescription() {
@@ -121,21 +53,56 @@ public class Trajet {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	/* ToString */
-	public String toString() {
-		return "Trajet "+
-				"\n Addresse Destination : " + addresseDestination + 
-				"\n Addresse Depart : " + addresseDepart + 
-		 		"\n Ville Destination : " + villeDestination + 
-				"\n Ville Depart : " + villeDepart + 
-				"\n Heure Depart : " + heureDepart + 
-				"\n Description : " + description;
+
+	public Date getHeureDepart() {
+		return heureDepart;
+	}
+
+	public void setHeureDepart(Date heureDepart) {
+		this.heureDepart = heureDepart;
+	}
+
+	public int getNbPlace() {
+		return nbPlace;
+	}
+
+	public void setNbPlace(int nbPlace) {
+		this.nbPlace = nbPlace;
+	}
+
+	public Membre getConducteur() {
+		return conducteur;
+	}
+
+	public void setConducteur(Membre conducteur) {
+		this.conducteur = conducteur;
+	}
+
+	public List<Membre> getParticipants() {
+		return participants;
+	}
+
+	public void setParticipants(List<Membre> participants) {
+		this.participants = participants;
+	}
+
+	public Voiture getVoiture() {
+		return voiture;
+	}
+
+	public void setVoiture(Voiture voiture) {
+		this.voiture = voiture;
 	}
 	
+	public int getNbPlacesDispo() {
+		return nbPlace - participants.size();
+	}
 	
-	
-	
-	
-	
+	public void inscription(Membre membre) {
+		if(getNbPlacesDispo() > 0) {
+			participants.add(membre);
+			membre.participerTrajet(this);
+		}
+	}
+
 }

@@ -1,74 +1,41 @@
 package model;
-import java.util.Scanner;
+import java.io.Serializable;
 
-public class Voiture {
-	private String marqueVoiture;
-	private String modeleVoiture;
-	private int nbPlaces;
+public class Voiture implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	private String nom;
+	private String couleur;
+	private String type;
 
-	/* Classe Voiture Vide*/
-	public Voiture(){
-		this.marqueVoiture = "[Non definie]";
-		this.modeleVoiture = "[Non definie]";
-		this.nbPlaces = -1;
+	public Voiture(String nom, String couleur, String type) {
+		this.nom = nom;
+		this.couleur = couleur;
+		this.type = type;
 	}
 	
-	/* Classe Voiture Non Vide*/	
-	public Voiture(String mVoiture, String modVoiture, int nPlaces){
-		this.marqueVoiture = mVoiture;
-		this.modeleVoiture = modVoiture;
-		this.nbPlaces = nPlaces;
-	}
-	
-	
-	/* Methode d'edition de voiture */
-	public void editionVoiture(){
-		Scanner clavier = new Scanner(System.in);
-		
-		System.out.println("Quelle est la marque de votre voiture ?");
-		String marque = clavier.nextLine();
-		setMarqueVoiture(marque);
-		
-		System.out.println("Quelle est le modele de votre voiture ?");
-		String modele = clavier.nextLine();
-		setModeleVoiture(modele);
-		
-		System.out.println("Combien de places disponibles dans votre voiture ?");
-		int place = clavier.nextInt();
-		setNbPlaces(place);
-		
-		clavier.close();
-
-	}
-	
-
-	/* Getters Setters */
-	public String getMarqueVoiture() {
-		return marqueVoiture;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setMarqueVoiture(String marqueVoiture) {
-		this.marqueVoiture = marqueVoiture;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
-	public String getModeleVoiture() {
-		return modeleVoiture;
+	public String getCouleur() {
+		return couleur;
 	}
 
-	public void setModeleVoiture(String modeleVoiture) {
-		this.modeleVoiture = modeleVoiture;
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
 	}
 
-	public int getNbPlaces() {
-		return nbPlaces;
+	public String getType() {
+		return type;
 	}
 
-	public void setNbPlaces(int nbPlaces) {
-		this.nbPlaces = nbPlaces;
+	public void setType(String type) {
+		this.type = type;
 	}
- 
-	/* ToString */
-	public String toString() {
-		return "Il s'agit d'une " + marqueVoiture + " "+ modeleVoiture + ", qui dispose de " + nbPlaces + " places libres.";
-	}
+
 }

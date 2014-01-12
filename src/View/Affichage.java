@@ -1,10 +1,4 @@
 package View;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -36,7 +30,7 @@ public class Affichage {
 			System.out.println("\tNom : " + membre.getNom());
 			System.out.println("\tPrenom :" + membre.getPrenom());
 			System.out.println("\tAdresse : " +membre.getAdresse());
-			System.out.println("\tEmail : " + membre.getMail());
+			System.out.println("\tEmail : " + membre.getEmail());
 			System.out.println("\tTél : " + membre.getTelephone());
 		}
 	}
@@ -44,6 +38,8 @@ public class Affichage {
 	public static Membre afficherCreerMembre() {
 		System.out.println("Création d'un compte\n");
 		String nom = inputString("Nom?", "Votre nom", 3);
+		String prenom = inputString("Prenom?", "Votre prenom", 3);
+		String adresse = inputString("Adresse?", "Votre adresse", 20);
 		String email = inputString("Email?", "L'email", 5);
 		String telephone = inputString("Téléphone?", "Le téléphone", 8);
 

@@ -1,82 +1,37 @@
 package model;
-import java.util.Scanner;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Membre implements java.io.Serializable {
-	/**
-	 * 
-	 */
+public class Membre implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	private String nom;
 	private String prenom;
 	private String adresse;
-	private String mail;
-	private int telephone;
-	private String preference;
-	private String role;
+	private String email;
+	private String telephone;
 	
-	/* Classe Membre Vide*/
-	public Membre(){
-		this.nom = "[Non definie]";
-		this.prenom = "[Non definie]";
-		this.adresse = "[Non definie]";
-		this.mail = "[Non definie]";
-		this.telephone = -1;
-		this.preference = "[Non definie]";
-		this.role = "[Non definie]";
-	}
+	private List<Trajet> trajets;
+	private List<Trajet> trajetsConducteur;
+	private List<Voiture> voitures;
 	
-	
-	/* Classe Membre Non Vide*/	
-	public Membre(String nom, String prenom, String adresse, String mail, int telephone, String preference, String role){
+	public Membre(String nom, String prenom, String adresse, String email, String telephone) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
-		this.mail = mail;
+		this.email = email;
 		this.telephone = telephone;
-		this.preference = preference;
-		this.role = role;
-	}
-	
-	
-	
-	/* Methode d'edition de Membre */
-	public void editionMembre(){
-		Scanner clavier = new Scanner(System.in);
-
-		System.out.println("Nom : ");
-		String nom = clavier.nextLine();
-		setNom(nom);
-		
-		System.out.println("Prenom : ");
-		String prenom = clavier.nextLine();
-		setPrenom(prenom);
-		
-		System.out.println("Adresse : ");
-		String adresse = clavier.nextLine();
-		setAdresse(adresse);
-		
-		System.out.println("Mail : ");
-		String mail = clavier.nextLine();
-		setMail(mail);
-
-		System.out.println("Preference : ");
-		String preference = clavier.nextLine();
-		setPreference(preference);
-		
-		System.out.println("Role : ");
-		String role = clavier.nextLine();
-		setRole(role);
-		
-		System.out.println("Telephone : ");
-		int telephone = clavier.nextInt();
-		setTelephone(telephone);
-		
-		clavier.close();
-
+		this.trajets = new ArrayList<Trajet>();
+		this.trajetsConducteur = new ArrayList<Trajet>();
+		this.voitures = new ArrayList<Voiture>();
 	}
 
-	/* Getters Setters */
+	public void participerTrajet(Trajet trajet) {
+		trajets.add(trajet);
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -84,65 +39,61 @@ public class Membre implements java.io.Serializable {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
+	
 	public String getPrenom() {
 		return prenom;
 	}
-
+	
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
+	
 	public String getAdresse() {
 		return adresse;
 	}
-
+	
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
 
-	public String getMail() {
-		return mail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 
-	public String getPreference() {
-		return preference;
+	public List<Trajet> getTrajets() {
+		return trajets;
 	}
 
-	public void setPreference(String preference) {
-		this.preference = preference;
+	public void setTrajets(List<Trajet> trajets) {
+		this.trajets = trajets;
 	}
 
-	public String getRole() {
-		return role;
+	public List<Trajet> getTrajetsConducteur() {
+		return trajetsConducteur;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setTrajetsConducteur(List<Trajet> trajetsConducteur) {
+		this.trajetsConducteur = trajetsConducteur;
 	}
- 
-	/* ToString */
-	public String toString() {
-		return "Membre "+
-				"\n Nom : " + nom + 
-				"\n Prenom : " + prenom + 
-				"\n Adresse : " + adresse + 
-				"\n Mail : " + mail + 
-				"\n Telephone : " + telephone + 
-				"\n Preference : " + preference + 
-				"\n Role : " + role;
+
+	public List<Voiture> getVoitures() {
+		return voitures;
+	}
+
+	public void setVoitures(List<Voiture> voitures) {
+		this.voitures = voitures;
 	}
 	
 }
