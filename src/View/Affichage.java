@@ -9,7 +9,7 @@ public class Affichage {
 	private static String bienvenueMessage = "Bienvenue sur le logiciel de Covoiturage N2P1!\n";
 	private static String menu = "MENU\n--------------------\n" +
 			"1. Créer un compte\n" +
-			"2. Créer un trajet\n" +
+			"2. Créer un trajet [Non Fonctionnel actuellement]\n" +
 			"3. Voir les membres\n" +
 			"0. Quitter\n";
 
@@ -27,7 +27,7 @@ public class Affichage {
 		for(Membre membre: membres) {
 			System.out.println("1. -------------------- ");
 			System.out.println("\tNom : " + membre.getNom());
-			System.out.println("\tPrenom :" + membre.getPrenom());
+			System.out.println("\tPrenom : " + membre.getPrenom());
 			System.out.println("\tAdresse : " +membre.getAdresse());
 			System.out.println("\tEmail : " + membre.getEmail());
 			System.out.println("\tTél : " + membre.getTelephone());
