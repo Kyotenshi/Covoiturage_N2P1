@@ -4,6 +4,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
+import model.Membre;
+import model.Trajet;
+import model.Voiture;
+
 public class Test {
 
 	public static void main(String[] args) {

@@ -1,3 +1,4 @@
+package model;
 //
 //editionTrajet() NE CONTIENT PAS "AUTEUR"
 // heureDepart est de type INT
