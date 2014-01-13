@@ -26,6 +26,7 @@ public class Affichage {
 		System.out.println("Les Membres");
 		for(Membre membre: membres) {
 			System.out.println("1. -------------------- ");
+			System.out.println("\tPseudo : " + membre.getPseudo());
 			System.out.println("\tNom : " + membre.getNom());
 			System.out.println("\tPrenom : " + membre.getPrenom());
 			System.out.println("\tAdresse : " +membre.getAdresse());
@@ -36,13 +37,14 @@ public class Affichage {
 
 	public static Membre afficherCreerMembre() {
 		System.out.println("Création d'un compte\n");
+		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);
 		String nom = inputString("Nom?", "Votre nom", 3);
 		String prenom = inputString("Prenom?", "Votre prenom", 3);
 		String adresse = inputString("Adresse?", "Votre adresse", 20);
 		String email = inputString("Email?", "L'email", 5);
 		String telephone = inputString("Téléphone?", "Le téléphone", 8);
 
-		return new Membre(nom, prenom, adresse, email, telephone);		
+		return new Membre(pseudo, nom, prenom, adresse, email, telephone);		
 	}
 	
 	private static String inputString(String message, String propriete, int minLength) {

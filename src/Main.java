@@ -32,6 +32,7 @@ public class Main {
 					break;
 				case 2:
 					break;
+					
 				case 3:
 					Affichage.afficherMembres(appli.getMembres());
 					Affichage.afficherMenu();

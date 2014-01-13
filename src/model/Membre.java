@@ -7,6 +7,7 @@ import java.util.List;
 public class Membre implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	private String pseudo;
 	private String nom;
 	private String prenom;
 	private String adresse;
@@ -17,7 +18,8 @@ public class Membre implements Serializable {
 	private List<Trajet> trajetsConducteur;
 	private List<Voiture> voitures;
 	
-	public Membre(String nom, String prenom, String adresse, String email, String telephone) {
+	public Membre(String pseudo, String nom, String prenom, String adresse, String email, String telephone) {
+		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
@@ -30,6 +32,14 @@ public class Membre implements Serializable {
 
 	public void participerTrajet(Trajet trajet) {
 		trajets.add(trajet);
+	}
+	
+	public String getPseudo() {
+		return pseudo;
+	}
+	
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 
 	public String getNom() {
