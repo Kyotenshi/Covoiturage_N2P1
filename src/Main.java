@@ -45,6 +45,10 @@ public class Main {
 					Affichage.afficherMembres(appli.getMembres());
 					Affichage.afficherMenu();
 					break;
+				case 4:
+					System.out.println("Modifier un membre");
+					appli.estExistant();
+					break;
 			}
 		}		
 	}
