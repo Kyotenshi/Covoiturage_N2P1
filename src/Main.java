@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import javax.swing.JWindow;
+
 import View.Affichage;
 import model.Application;
 import model.Membre;
@@ -19,11 +21,14 @@ public class Main {
 		Affichage.afficherIntro();
 		boolean quitter = false;
 		
+		JWindow windows = new JWindow();
+		
 		while(!quitter) {
 			int action = Affichage.afficherMenu();
 			switch(action) {
 				case 0:
 					quitter = true;
+					System.out.println("Merci d'avoir utilisé le programme de Covoiturage N2P1, à bientôt !");
 					break;
 				case 1:
 					Membre m = Affichage.afficherCreerMembre();
