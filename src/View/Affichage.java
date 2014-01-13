@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.Membre;
+import model.Trajet;
 
 public class Affichage {
 	private static String bienvenueMessage = "Bienvenue sur le logiciel de Covoiturage N2P1!\n";
@@ -46,6 +47,20 @@ public class Affichage {
 
 		return new Membre(pseudo, nom, prenom, adresse, email, telephone);		
 	}
+	
+	/* public static Trajet afficherCreerTrajet() {
+		System.out.println("Création d'un trajet\n");
+		String adresseDepart = inputString("Adresse de départ ?", "Votre adresse de départ", 20);
+		String adresseArrivee =  inputString("Adresse d'arrivée ?", "Votre addresse d'arrivée", 20);
+		String description = inputString("Descrption du trajet ?", "Votre description du trajet", 20);
+		String heureDepart = inputString("Heure de départ ?", "Votre heure de départ", 5);
+		String heureArrivee = inputString("Heure d'arrivée ?", "Votre heure d'arrivée", 5);
+		String nbPlaces = inputString("Nombre de places ?", "Votre nombre de place", 1);
+		String conducteur = inputString("Conducteur ?", "Votre conducteur", 3);
+		String voiture = inputString("Voiture ?", "Votre voiture", 2);
+		return new Trajet(adresseDepart, adresseArrivee, description, heureDepart, heureArrivee, nbPlaces, conducteur, voiture);
+		
+	} */
 	
 	private static String inputString(String message, String propriete, int minLength) {
 		System.out.println(message);

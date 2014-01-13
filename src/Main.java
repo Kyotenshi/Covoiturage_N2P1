@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import javax.swing.JWindow;
+//import javax.swing.JWindow;
 
 import View.Affichage;
 import model.Application;
@@ -21,7 +21,9 @@ public class Main {
 		Affichage.afficherIntro();
 		boolean quitter = false;
 		
-		JWindow windows = new JWindow();
+		/* JWindow windows = new JWindow();
+		windows.setSize(300, 200);
+		windows.setVisible(true); */
 		
 		while(!quitter) {
 			int action = Affichage.afficherMenu();
@@ -36,6 +38,7 @@ public class Main {
 					serialize();
 					break;
 				case 2:
+					System.out.println("Fonction indisponible actuellement, veuillez réessayer plus tard !");
 					break;
 					
 				case 3:

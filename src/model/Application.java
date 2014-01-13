@@ -21,4 +21,8 @@ public class Application implements Serializable {
 	public void ajouterMembre(Membre membre) {
 		membres.add(membre);
 	}
+	
+	public void ajouterTrajet(Trajet trajet) {
+		
+	}
 }
