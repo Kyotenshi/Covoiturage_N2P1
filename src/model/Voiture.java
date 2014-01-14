@@ -3,7 +3,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author Kyo
+ * @author Kyo (Hennache Johan)
  *
  */
 

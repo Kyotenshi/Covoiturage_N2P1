@@ -7,7 +7,7 @@ import model.Membre;
 
 /**
  * 
- * @author Kyo
+ * @author Kyo (Hennache Johan)
  *
  */
 
@@ -16,7 +16,6 @@ public class Affichage {
 	/**
 	 * 
 	 */
-	
 	
 	private static String bienvenueMessage = "Bienvenue sur le logiciel de Covoiturage N2P1!\n";
 	private static String menu = "MENU\n--------------------\n" +
@@ -132,7 +131,10 @@ public class Affichage {
 
 	}
 	
-
+	/**
+	 * 
+	 * @return Retourne le pseudo du membre demandé.
+	 */
 
 	public static String demanderMembre() {
 		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);

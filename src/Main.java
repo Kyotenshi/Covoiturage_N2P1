@@ -13,7 +13,7 @@ import model.Membre;
 
 /**
  * 
- * @author Kyo
+ * @author Kyo (Hennache Johan)
  *
  */
 

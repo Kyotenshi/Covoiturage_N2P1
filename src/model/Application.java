@@ -6,9 +6,18 @@ import java.util.List;
 
 import View.Affichage;
 
+/**
+ * 
+ * @author Kyo (Hennache Johan)
+ *
+ */
+
+
 public class Application implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+
 	
 	private List<Membre> membres;
 
