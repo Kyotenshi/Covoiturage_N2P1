@@ -4,6 +4,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author Kyo
+ * @version 
+ */
+
 public class Membre implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -18,6 +24,16 @@ public class Membre implements Serializable {
 	private List<Trajet> trajetsConducteur;
 	private List<Voiture> voitures;
 	
+	/**
+	 * Liste des attributs nécessaires à la création d'un membre
+	 * @param pseudo Pseudo de l'utilisateur
+	 * @param nom Nom de l'utilisateur
+	 * @param prenom Prénom de l'utilisateur
+	 * @param adresse Adresse de l'utilisateur
+	 * @param email Email de l'utilisateur
+	 * @param telephone Téléphone de l'utilisateur
+	 */
+	
 	public Membre(String pseudo, String nom, String prenom, String adresse, String email, String telephone) {
 		this.pseudo = pseudo;
 		this.nom = nom;
@@ -29,7 +45,7 @@ public class Membre implements Serializable {
 		this.trajetsConducteur = new ArrayList<Trajet>();
 		this.voitures = new ArrayList<Voiture>();
 	}
-
+	
 	public void participerTrajet(Trajet trajet) {
 		trajets.add(trajet);
 	}

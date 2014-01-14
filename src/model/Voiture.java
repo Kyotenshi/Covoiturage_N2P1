@@ -1,12 +1,25 @@
 package model;
 import java.io.Serializable;
 
+/**
+ * 
+ * @author Kyo
+ *
+ */
+
 public class Voiture implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private String nom;
 	private String couleur;
 	private String type;
+	
+	/**
+	 * Liste des attributs nécessaires à  la création d'une voiture
+	 * @param nom Nom de la voiture
+	 * @param couleur Couleur de la voiture
+	 * @param type Type de voiture
+	 */
 
 	public Voiture(String nom, String couleur, String type) {
 		this.nom = nom;

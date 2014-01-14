@@ -11,6 +11,11 @@ import View.Affichage;
 import model.Application;
 import model.Membre;
 
+/**
+ * 
+ * @author Kyo
+ *
+ */
 
 public class Main {
 
@@ -28,23 +33,29 @@ public class Main {
 		while(!quitter) {
 			int action = Affichage.afficherMenu();
 			switch(action) {
+			//Dans le cas "0", le programme affiche un message pour dire Au revoir et change la variable "quitter" en "True" pour fermer
+			//le soft
 				case 0:
 					quitter = true;
 					System.out.println("Merci d'avoir utilisé le programme de Covoiturage N2P1, à bientôt !");
 					break;
+			//Dans le cas où l'utilisateur entre la valeur 1, le programme affiche l'interface permettant de créer un membre
 				case 1:
 					Membre m = Affichage.afficherCreerMembre();
 					appli.ajouterMembre(m);
 					serialize();
 					break;
+			//Dans le cas où l'utilisateur entre la valeur 2, le programme affiche [à complèter]
 				case 2:
 					System.out.println("Fonction indisponible actuellement, veuillez réessayer plus tard !");
 					break;
-					
+			//Dans le cas où l'utilisateur entre la valeur 3, le programme affiche la liste des membres de Covoiturage N2P1
 				case 3:
 					Affichage.afficherMembres(appli.getMembres());
 					Affichage.afficherMenu();
 					break;
+			//Dans le cas où l'utilisateur entre la valeur 4, le programme affiche l'interface permettant la modification
+			//d'un membre.
 				case 4:
 					System.out.println("Modifier un membre");
 					appli.estExistant();
@@ -53,8 +64,11 @@ public class Main {
 		}		
 	}
 	
+	//
 	private static void deserialize() {
+		//Créer le fichier data
 		File file = new File("data");
+		//Si le fichier existe, l'application va le lire puis fermer le flux
 		if(file.exists()) {
 			try {
 				FileInputStream fileIn = new FileInputStream(file);
@@ -71,6 +85,7 @@ public class Main {
 			}
 		}
 		else {
+			//Sinon il crée l'application
 			appli = new Application();
 		}
 	}
