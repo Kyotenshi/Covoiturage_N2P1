@@ -46,9 +46,19 @@ public class Membre implements Serializable {
 		this.voitures = new ArrayList<Voiture>();
 	}
 	
+	/**
+	 * 
+	 * @param trajet
+	 */
+	
 	public void participerTrajet(Trajet trajet) {
 		trajets.add(trajet);
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 	
 	public String getPseudo() {
 		return pseudo;
