@@ -17,8 +17,6 @@ public class Application implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-
-	
 	private List<Membre> membres;
 
 	public Application() {
@@ -33,18 +31,36 @@ public class Application implements Serializable {
 		membres.add(membre);
 	}
 	
-	public boolean estExistant(){
-        
-        String pseudo = Affichage.demanderMembre();
+	
+    public void modifierMembre(){
+    	//Demande du pseudo du membre, si il exsite, alors la methode retourne le pseudo du membre sous forme de String
+    	String pseudo = Affichage.demanderMembre();
+	
+    	//Pour chaque membres dans la liste
+    	for(Membre membre : membres) {
+	        //On test si le pseudo (String) correspond a l'un d'entre eux
+	        if(pseudo.equals(membre.getPseudo())){
+	                System.out.println("Le membre existe !");
+	        Affichage.afficherModifierMembre(membre);
+	        }
+    	}
+    }
+    
+    public void ajouterTrajet(){
+		//Demande du pseudo du membre, si il exsite, alors la methode retourne le pseudo du membre sous forme de String
+		String pseudo = Affichage.demanderMembre();
+		
+		//Pour chaque membres dans la liste
+		for(Membre membre : membres) {
+		        //On test si le pseudo (String) correspond a l'un d'entre eux
+		        if(pseudo.equals(membre.getPseudo())){
+		                System.out.println("Le membre existe !");
+		        Affichage.afficherAjouterTrajet(membre);
+		    }
+		}
+    }
+    
+    
+    
+}
 
-        for(Membre membre : membres) {
-               
-                System.out.println(pseudo);
-                System.out.println(membre.getPseudo());
-                if(pseudo.equals(membre.getPseudo())){
-                        return true;
-                }
-        }
-        return false;
-}
-}

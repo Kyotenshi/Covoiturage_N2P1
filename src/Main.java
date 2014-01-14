@@ -47,7 +47,8 @@ public class Main {
 					break;
 			//Dans le cas où l'utilisateur entre la valeur 2, le programme affiche [à complèter]
 				case 2:
-					System.out.println("Fonction indisponible actuellement, veuillez réessayer plus tard !");
+					appli.ajouterTrajet();
+					serialize();
 					break;
 			//Dans le cas où l'utilisateur entre la valeur 3, le programme affiche la liste des membres de Covoiturage N2P1
 				case 3:
@@ -58,13 +59,14 @@ public class Main {
 			//d'un membre.
 				case 4:
 					System.out.println("Modifier un membre");
-					appli.estExistant();
+					appli.modifierMembre();
+					serialize();
 					break;
 			}
 		}		
 	}
 	
-	//
+
 	private static void deserialize() {
 		//Créer le fichier data
 		File file = new File("data");

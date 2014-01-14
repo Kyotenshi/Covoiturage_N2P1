@@ -18,10 +18,10 @@ public class Trajet implements Serializable {
 	private String description;
 	private String heureDepart;
 	private int nbPlace;
-	private Membre conducteur;
+	private String conducteur;
 	
 	private List<Membre> participants;
-	private Voiture voiture;
+	private String voiture;
 	
 	/**
 	 * Liste des attributs nécessaires à la création d'un trajet
@@ -29,13 +29,14 @@ public class Trajet implements Serializable {
 	 * @param adresseArrivee Adresse d'arrivée du trajet
 	 * @param description Description d'un trajet
 	 * @param heureDepart Heure de départ du trajet
+	 * @param heureArrivee 
 	 * @param nbPlace Nombre de places disponibles dans un trajet
 	 * @param conducteur Nom du conducteur du trajet
 	 * @param voiture Voiture du conducteur du trajet
 	 */
 	
 	public Trajet(String adresseDepart, String adresseArrivee, String description,
-			String heureDepart, int nbPlace, Membre conducteur, Voiture voiture) {
+			String heureDepart, String heureArrivee, int nbPlace, String conducteur, String voiture) {
 		this.adresseDepart = adresseDepart;
 		this.adresseArrivee = adresseArrivee;
 		this.description = description;
@@ -44,6 +45,15 @@ public class Trajet implements Serializable {
 		this.conducteur = conducteur;
 		this.voiture = voiture;
 		participants = new ArrayList<Membre>();
+	}
+
+	@Override
+	public String toString() {
+		return "Trajet [adresseDepart=" + adresseDepart + ", adresseArrivee="
+				+ adresseArrivee + ", description=" + description
+				+ ", heureDepart=" + heureDepart + ", nbPlace=" + nbPlace
+				+ ", conducteur=" + conducteur + ", participants="
+				+ participants + ", voiture=" + voiture + "]";
 	}
 
 	/**
@@ -141,7 +151,7 @@ public class Trajet implements Serializable {
 	 * @return Retourne le nom du membre conducteur.
 	 */
 
-	public Membre getConducteur() {
+	public String getConducteur() {
 		return conducteur;
 	}
 	
@@ -150,7 +160,7 @@ public class Trajet implements Serializable {
 	 * @param conducteur
 	 */
 
-	public void setConducteur(Membre conducteur) {
+	public void setConducteur(String conducteur) {
 		this.conducteur = conducteur;
 	}
 	
@@ -177,7 +187,7 @@ public class Trajet implements Serializable {
 	 * @return Retourne la voiture du trajet.
 	 */
 
-	public Voiture getVoiture() {
+	public String getVoiture() {
 		return voiture;
 	}
 	
@@ -186,7 +196,7 @@ public class Trajet implements Serializable {
 	 * @param voiture
 	 */
 
-	public void setVoiture(Voiture voiture) {
+	public void setVoiture(String voiture) {
 		this.voiture = voiture;
 	}
 	

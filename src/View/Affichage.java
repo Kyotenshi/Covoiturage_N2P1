@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.Membre;
+import model.Trajet;
 
 /**
  * 
@@ -20,8 +21,9 @@ public class Affichage {
 	private static String bienvenueMessage = "Bienvenue sur le logiciel de Covoiturage N2P1!\n";
 	private static String menu = "MENU\n--------------------\n" +
 			"1. Créer un compte\n" +
-			"2. Créer un trajet [Non Fonctionnel actuellement]\n" +
+			"2. Créer un trajet\n" +
 			"3. Voir les membres\n" +
+			"4. Modifier les membres\n" +
 			"0. Quitter\n";
 
 	public static void afficherIntro() {
@@ -53,6 +55,7 @@ public class Affichage {
 			System.out.println("\tAdresse : " +membre.getAdresse());
 			System.out.println("\tEmail : " + membre.getEmail());
 			System.out.println("\tTél : " + membre.getTelephone());
+			System.out.println("\tTrajets : " + membre.getTrajets());
 		}
 	}
 	
@@ -73,20 +76,38 @@ public class Affichage {
 		return new Membre(pseudo, nom, prenom, adresse, email, telephone);		
 	}
 
-	/* public static Trajet afficherCreerTrajet() {
-		System.out.println("Création d'un trajet\n");
-		String adresseDepart = inputString("Adresse de départ ?", "Votre adresse de départ", 20);
-		String adresseArrivee =  inputString("Adresse d'arrivée ?", "Votre addresse d'arrivée", 20);
-		String description = inputString("Descrption du trajet ?", "Votre description du trajet", 20);
-		String heureDepart = inputString("Heure de départ ?", "Votre heure de départ", 5);
-		String heureArrivee = inputString("Heure d'arrivée ?", "Votre heure d'arrivée", 5);
-		String nbPlaces = inputString("Nombre de places ?", "Votre nombre de place", 1);
-		String conducteur = inputString("Conducteur ?", "Votre conducteur", 3);
-		String voiture = inputString("Voiture ?", "Votre voiture", 2);
-		return new Trajet(adresseDepart, adresseArrivee, description, heureDepart, heureArrivee, nbPlaces, conducteur, voiture);
+    //Re-ecris dans le membre existant placé en parametre
+    public static void afficherModifierMembre(Membre membreChoix) {
+            System.out.println("Modification d'un compte\n");
+            membreChoix.setPseudo(inputString("Pseudo ?", "Votre pseudo", 3));
+            membreChoix.setNom(inputString("Nom?", "Votre nom", 3));
+            membreChoix.setPrenom(inputString("Prenom?", "Votre prenom", 3));
+            membreChoix.setAdresse(inputString("Adresse?", "Votre adresse", 20));
+            membreChoix.setEmail(inputString("Email?", "L'email", 5));
+            membreChoix.setTelephone(inputString("Téléphone?", "Le téléphone", 8));
+    }
+    
+    //Ajoute le trajet dans le membre existant placé en parametre
+    public static void afficherAjouterTrajet(Membre membreChoix) {
+            System.out.println("Ajout d'un trajet\n");
+            Trajet t = afficherCreerTrajet();
+            membreChoix.getTrajets().add(t);
+    }
 
-	} */
-	
+    public static Trajet afficherCreerTrajet() {
+            System.out.println("Création d'un trajet\n");
+            String adresseDepart = inputString("Adresse de départ ?", "Votre adresse de départ", 20);
+            String adresseArrivee =  inputString("Adresse d'arrivée ?", "Votre addresse d'arrivée", 20);
+            String description = inputString("Descrption du trajet ?", "Votre description du trajet", 20);
+            String heureDepart = inputString("Heure de départ ?", "Votre heure de départ", 5);
+            String heureArrivee = inputString("Heure d'arrivée ?", "Votre heure d'arrivée", 5);
+            int nbPlaces = inputNumber("Nombre de places ?");
+            String conducteur = inputString("Conducteur ?", "Votre conducteur", 3);
+            String voiture = inputString("Voiture ?", "Votre voiture", 2);
+            return new Trajet(adresseDepart, adresseArrivee, description, heureDepart, heureArrivee, nbPlaces, conducteur, voiture);
+
+    }
+    
 	/**
 	 * Fonction qui permet d'interagir avec le programme en entrée.
 	 * @param message Affiche un message selon l'info à entrer.
