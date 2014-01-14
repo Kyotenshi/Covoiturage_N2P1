@@ -5,7 +5,19 @@ import java.util.Scanner;
 
 import model.Membre;
 
+/**
+ * 
+ * @author Kyo
+ *
+ */
+
 public class Affichage {
+
+	/**
+	 * 
+	 */
+	
+	
 	private static String bienvenueMessage = "Bienvenue sur le logiciel de Covoiturage N2P1!\n";
 	private static String menu = "MENU\n--------------------\n" +
 			"1. Créer un compte\n" +
@@ -17,11 +29,21 @@ public class Affichage {
 		System.out.print(bienvenueMessage);
 	}
 
+	/**
+	 * 
+	 * @return Retourne le choix effectué dans le menu.
+	 */
+	
 	public static int afficherMenu() {
 		System.out.print(menu);
 		return inputNumber("Votre choix");		
 	}
 
+	/**
+	 * Prends en paramètre le membre concerné et affiche ses informations.
+	 * @param membres
+	 */
+	
 	public static void afficherMembres(List<Membre> membres) {
 		System.out.println("Les Membres");
 		for(Membre membre: membres) {
@@ -34,6 +56,11 @@ public class Affichage {
 			System.out.println("\tTél : " + membre.getTelephone());
 		}
 	}
+	
+	/**
+	 * 
+	 * @return Retourne le membre et les infos renseignées.
+	 */
 
 	public static Membre afficherCreerMembre() {
 		System.out.println("Création d'un compte\n");
@@ -60,6 +87,14 @@ public class Affichage {
 		return new Trajet(adresseDepart, adresseArrivee, description, heureDepart, heureArrivee, nbPlaces, conducteur, voiture);
 
 	} */
+	
+	/**
+	 * Fonction qui permet d'interagir avec le programme en entrée.
+	 * @param message Affiche un message selon l'info à entrer.
+	 * @param propriete Défini le paramètre à entrer.
+	 * @param minLength Correspond à la longueur minimal attendu de la saisie.
+	 * @return
+	 */
 
 	private static String inputString(String message, String propriete, int minLength) {
 		System.out.println(message);
@@ -71,6 +106,12 @@ public class Affichage {
 		}
 		return input;
 	}
+	
+	/**
+	 * 
+	 * @param message Affiche un message en fonction du choix effectué
+	 * @return Retourne l'entrée.
+	 */
 
 	private static int inputNumber(String message) {
 		System.out.println(message);
@@ -90,6 +131,8 @@ public class Affichage {
 		return input;
 
 	}
+	
+
 
 	public static String demanderMembre() {
 		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);

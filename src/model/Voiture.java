@@ -27,25 +27,55 @@ public class Voiture implements Serializable {
 		this.type = type;
 	}
 	
+	/**
+	 * 
+	 * @return Retourne le nom de la voiture.
+	 */
+	
 	public String getNom() {
 		return nom;
 	}
+	
+	/**
+	 * Prend en paramètre le nom de la voiture.
+	 * @param nom
+	 */
 
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+	
+	/**
+	 * 
+	 * @return Retourne la couleur de la voiture.
+	 */
 
 	public String getCouleur() {
 		return couleur;
 	}
+	
+	/**
+	 * Prend en paramètre la couleur du véhicule.
+	 * @param couleur
+	 */
 
 	public void setCouleur(String couleur) {
 		this.couleur = couleur;
 	}
+	
+	/**
+	 * 
+	 * @return Retourne le type de voiture.
+	 */
 
 	public String getType() {
 		return type;
 	}
+	
+	/**
+	 * Prends en paramètre le type de voiture.
+	 * @param type
+	 */
 
 	public void setType(String type) {
 		this.type = type;
