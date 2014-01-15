@@ -43,13 +43,13 @@ public class Main {
 					break;
 			//Dans le cas où l'utilisateur entre la valeur 1, le programme affiche l'interface permettant de créer un membre
 				case 1:
-					String input = "N";
+					String input;
 					Membre m = Affichage.afficherCreerMembre();
 					appli.ajouterMembre(m);
 					System.out.println("Possedez vous une voiture ? Répondez par \"O\" ou \"N\"");
 					Scanner sc = new Scanner(System.in);
 					input = sc.next();
-						if(input == "O") {
+						if(input.equals("O")) {
 							//Voiture v = Affichage.afficherCreerVoiture();
 							//appli.ajouterVoiture(v);
 						} else {
@@ -65,7 +65,6 @@ public class Main {
 			//Dans le cas où l'utilisateur entre la valeur 3, le programme affiche la liste des membres de Covoiturage N2P1
 				case 3:
 					Affichage.afficherMembres(appli.getMembres());
-					Affichage.afficherMenu();
 					break;
 			//Dans le cas où l'utilisateur entre la valeur 4, le programme affiche l'interface permettant la modification
 			//d'un membre.
