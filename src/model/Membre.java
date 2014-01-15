@@ -21,8 +21,10 @@ public class Membre implements Serializable {
 	private String telephone;
 	
 	private List<Trajet> trajets;
-	private List<Trajet> trajetsConducteur;
-	private List<Voiture> voitures;
+	
+	private String nomVoiture;
+	private String couleurVoiture;
+	private String typeVoiture;
 	
 	/**
 	 * Liste des attributs nécessaires à la création d'un membre
@@ -32,9 +34,12 @@ public class Membre implements Serializable {
 	 * @param adresse Adresse de l'utilisateur
 	 * @param email Email de l'utilisateur
 	 * @param telephone Téléphone de l'utilisateur
+	 * @param couleurVoiture 
+	 * @param nomVoiture 
+	 * @param typeVoiture 
 	 */
 	
-	public Membre(String pseudo, String nom, String prenom, String adresse, String email, String telephone) {
+	public Membre(String pseudo, String nom, String prenom, String adresse, String email, String telephone, String couleurVoiture, String nomVoiture, String typeVoiture) {
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -42,8 +47,10 @@ public class Membre implements Serializable {
 		this.email = email;
 		this.telephone = telephone;
 		this.trajets = new ArrayList<Trajet>();
-		this.trajetsConducteur = new ArrayList<Trajet>();
-		this.voitures = new ArrayList<Voiture>();
+		
+		this.nomVoiture = nomVoiture;
+		this.setCouleurVoiture(couleurVoiture);
+		this.setTypeVoiture(typeVoiture);
 	}
 	
 	/**
@@ -179,41 +186,29 @@ public class Membre implements Serializable {
 	public void setTrajets(List<Trajet> trajets) {
 		this.trajets = trajets;
 	}
-	
-	/**
-	 * 
-	 * @return Retourne les trajets du membre conducteur.
-	 */
 
-	public List<Trajet> getTrajetsConducteur() {
-		return trajetsConducteur;
+	public String getNomVoiture() {
+		return nomVoiture;
 	}
-	
-	/**
-	 * Prends en paramètre les trajets des conducteurs.
-	 * @param trajetsConducteur
-	 */
 
-	public void setTrajetsConducteur(List<Trajet> trajetsConducteur) {
-		this.trajetsConducteur = trajetsConducteur;
+	public void setNomVoiture(String nomVoiture) {
+		this.nomVoiture = nomVoiture;
 	}
-	
-	/**
-	 * 
-	 * @return Retourne les voitures des membres
-	 */
 
-	public List<Voiture> getVoitures() {
-		return voitures;
+	public String getTypeVoiture() {
+		return typeVoiture;
 	}
-	
-	/**
-	 * Prends en paramètre les voitures.
-	 * @param voitures
-	 */
 
-	public void setVoitures(List<Voiture> voitures) {
-		this.voitures = voitures;
+	public void setTypeVoiture(String typeVoiture) {
+		this.typeVoiture = typeVoiture;
+	}
+
+	public String getCouleurVoiture() {
+		return couleurVoiture;
+	}
+
+	public void setCouleurVoiture(String couleurVoiture) {
+		this.couleurVoiture = couleurVoiture;
 	}
 	
 }

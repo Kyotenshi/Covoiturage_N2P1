@@ -7,8 +7,6 @@ import java.io.ObjectOutputStream;
 
 //import javax.swing.JWindow;
 
-import java.util.Scanner;
-
 import View.Affichage;
 import model.Application;
 import model.Membre;
@@ -43,18 +41,8 @@ public class Main {
 					break;
 			//Dans le cas où l'utilisateur entre la valeur 1, le programme affiche l'interface permettant de créer un membre
 				case 1:
-					String input;
 					Membre m = Affichage.afficherCreerMembre();
 					appli.ajouterMembre(m);
-					System.out.println("Possedez vous une voiture ? Répondez par \"O\" ou \"N\"");
-					Scanner sc = new Scanner(System.in);
-					input = sc.next();
-						if(input.equals("O")) {
-							//Voiture v = Affichage.afficherCreerVoiture();
-							//appli.ajouterVoiture(v);
-						} else {
-							System.out.println(m.getPseudo() + " ne possède pas de voiture");
-						}
 					serialize();
 					break;
 			//Dans le cas où l'utilisateur entre la valeur 2, le programme affiche [à complèter]

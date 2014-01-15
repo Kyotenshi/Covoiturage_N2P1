@@ -1,10 +1,12 @@
 package View;
+
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 import model.Membre;
 import model.Trajet;
+import model.Voiture;
 
 /**
  * 
@@ -72,10 +74,12 @@ public class Affichage {
 		String adresse = inputString("Adresse ?", "Votre adresse", 20);
 		String email = inputString("Email ?", "L'email", 5);
 		String telephone = inputString("Téléphone ?", "Le téléphone", 8);
+		String nomVoiture = inputString("Nom de la voiture ?", "Nom voiture", 3);
+		String couleurVoiture = inputString("Couleur de la voiture ?", "Couleur", 3);
+		String typeVoiture = inputString("Type de voiture", "Type", 3);
 		
-		return new Membre(pseudo, nom, prenom, adresse, email, telephone);		
+		return new Membre(pseudo, nom, prenom, adresse, email, telephone, nomVoiture, couleurVoiture, typeVoiture);		
 	}
-
     //Re-ecris dans le membre existant placé en parametre
     public static void afficherModifierMembre(Membre membreChoix) {
             System.out.println("Modification d'un compte\n");
@@ -163,8 +167,5 @@ public class Affichage {
 
 	}
 
-	public static model.Voiture afficherCreerVoiture() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
