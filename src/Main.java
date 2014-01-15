@@ -43,6 +43,8 @@ public class Main {
 				case 1:
 					Membre m = Affichage.afficherCreerMembre();
 					appli.ajouterMembre(m);
+					
+					//Voiture v = Affichage.afficherCreerVoiture();
 					serialize();
 					break;
 			//Dans le cas où l'utilisateur entre la valeur 2, le programme affiche [à complèter]

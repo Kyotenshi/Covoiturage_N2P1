@@ -33,10 +33,10 @@ public class Application implements Serializable {
 	
 	
     public void modifierMembre(){
-    	//Demande du pseudo du membre, si il exsite, alors la methode retourne le pseudo du membre sous forme de String
+    	//Demande du pseudo du membre, si il existe, alors la méthode retourne le pseudo du membre sous forme de String
     	String pseudo = Affichage.demanderMembre();
 	
-    	//Pour chaque membres dans la liste
+    	//Pour chaque membre dans la liste
     	for(Membre membre : membres) {
 	        //On test si le pseudo (String) correspond a l'un d'entre eux
 	        if(pseudo.equals(membre.getPseudo())){
@@ -47,10 +47,10 @@ public class Application implements Serializable {
     }
     
     public void ajouterTrajet(){
-		//Demande du pseudo du membre, si il exsite, alors la methode retourne le pseudo du membre sous forme de String
+		//Demande du pseudo du membre, si il existe, alors la méthode retourne le pseudo du membre sous forme de String
 		String pseudo = Affichage.demanderMembre();
 		
-		//Pour chaque membres dans la liste
+		//Pour chaque membre dans la liste
 		for(Membre membre : membres) {
 		        //On test si le pseudo (String) correspond a l'un d'entre eux
 		        if(pseudo.equals(membre.getPseudo())){

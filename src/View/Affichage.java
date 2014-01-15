@@ -67,12 +67,13 @@ public class Affichage {
 	public static Membre afficherCreerMembre() {
 		System.out.println("Création d'un compte\n");
 		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);
-		String nom = inputString("Nom?", "Votre nom", 3);
-		String prenom = inputString("Prenom?", "Votre prenom", 3);
-		String adresse = inputString("Adresse?", "Votre adresse", 20);
-		String email = inputString("Email?", "L'email", 5);
-		String telephone = inputString("Téléphone?", "Le téléphone", 8);
-
+		String nom = inputString("Nom ?", "Votre nom", 3);
+		String prenom = inputString("Prenom ?", "Votre prenom", 3);
+		String adresse = inputString("Adresse ?", "Votre adresse", 20);
+		String email = inputString("Email ?", "L'email", 5);
+		String telephone = inputString("Téléphone ?", "Le téléphone", 8);
+		
+		System.out.println("Possèdez vous une voiture ?");
 		return new Membre(pseudo, nom, prenom, adresse, email, telephone);		
 	}
 
@@ -80,11 +81,11 @@ public class Affichage {
     public static void afficherModifierMembre(Membre membreChoix) {
             System.out.println("Modification d'un compte\n");
             membreChoix.setPseudo(inputString("Pseudo ?", "Votre pseudo", 3));
-            membreChoix.setNom(inputString("Nom?", "Votre nom", 3));
-            membreChoix.setPrenom(inputString("Prenom?", "Votre prenom", 3));
-            membreChoix.setAdresse(inputString("Adresse?", "Votre adresse", 20));
-            membreChoix.setEmail(inputString("Email?", "L'email", 5));
-            membreChoix.setTelephone(inputString("Téléphone?", "Le téléphone", 8));
+            membreChoix.setNom(inputString("Nom ?", "Votre nom", 3));
+            membreChoix.setPrenom(inputString("Prenom ?", "Votre prenom", 3));
+            membreChoix.setAdresse(inputString("Adresse ?", "Votre adresse", 20));
+            membreChoix.setEmail(inputString("Email ?", "L'email", 5));
+            membreChoix.setTelephone(inputString("Téléphone ?", "Le téléphone", 8));
     }
     
     //Ajoute le trajet dans le membre existant placé en parametre
