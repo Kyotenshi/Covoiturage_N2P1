@@ -73,7 +73,6 @@ public class Affichage {
 		String email = inputString("Email ?", "L'email", 5);
 		String telephone = inputString("Téléphone ?", "Le téléphone", 8);
 		
-		System.out.println("Possèdez vous une voiture ?");
 		return new Membre(pseudo, nom, prenom, adresse, email, telephone);		
 	}
 
@@ -162,5 +161,10 @@ public class Affichage {
 		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);
 		return pseudo;
 
+	}
+
+	public static model.Voiture afficherCreerVoiture() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
