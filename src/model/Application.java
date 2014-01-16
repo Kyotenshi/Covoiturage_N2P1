@@ -31,6 +31,10 @@ public class Application implements Serializable {
 		membres.add(membre);
 	}
 	
+	public void viderMembre() {
+		membres.clear();
+	}
+	
 	
     public void modifierMembre(){
     	//Demande du pseudo du membre, si il existe, alors la méthode retourne le pseudo du membre sous forme de String

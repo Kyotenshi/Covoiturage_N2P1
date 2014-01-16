@@ -14,8 +14,8 @@ import java.util.List;
 public class Trajet implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private String adresseDepart;
-	private String adresseArrivee;
+	private String villeDepart;
+	private String villeArrivee;
 	private String description;
 	private String heureDepart;
 	private int nbPlace;
@@ -26,8 +26,8 @@ public class Trajet implements Serializable {
 	
 	/**
 	 * Liste des attributs nécessaires à la création d'un trajet
-	 * @param adresseDepart Adresse de départ du trajet
-	 * @param adresseArrivee Adresse d'arrivée du trajet
+	 * @param villeDepart Adresse de départ du trajet
+	 * @param villeArrivee Adresse d'arrivée du trajet
 	 * @param description Description d'un trajet
 	 * @param heureDepart Heure de départ du trajet
 	 * @param heureArrivee 
@@ -36,10 +36,10 @@ public class Trajet implements Serializable {
 	 * @param voiture Voiture du conducteur du trajet
 	 */
 	
-	public Trajet(String adresseDepart, String adresseArrivee, String description,
+	public Trajet(String villeDepart, String villeArrivee, String description,
 			String heureDepart, String heureArrivee, int nbPlace, String conducteur, String voiture) {
-		this.adresseDepart = adresseDepart;
-		this.adresseArrivee = adresseArrivee;
+		this.villeDepart = villeDepart;
+		this.villeArrivee = villeArrivee;
 		this.description = description;
 		this.heureDepart = heureDepart;
 		this.nbPlace = nbPlace;
@@ -50,8 +50,8 @@ public class Trajet implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Trajet [adresseDepart=" + adresseDepart + ", adresseArrivee="
-				+ adresseArrivee + ", description=" + description
+		return "Trajet [villeDepart=" + villeDepart + ", villeArrivee="
+				+ villeArrivee + ", description=" + description
 				+ ", heureDepart=" + heureDepart + ", nbPlace=" + nbPlace
 				+ ", conducteur=" + conducteur + ", participants="
 				+ participants + ", voiture=" + voiture + "]";
@@ -62,17 +62,17 @@ public class Trajet implements Serializable {
 	 * @return Retourne l'adresse de départ.
 	 */
 	
-	public String getAdresseDepart() {
-		return adresseDepart;
+	public String getvilleDepart() {
+		return villeDepart;
 	}
 	
 	/**
 	 * Prends en paramètre l'adresse de départ.
-	 * @param adresseDepart
+	 * @param villeDepart
 	 */
 
-	public void setAdresseDepart(String adresseDepart) {
-		this.adresseDepart = adresseDepart;
+	public void setvilleDepart(String villeDepart) {
+		this.villeDepart = villeDepart;
 	}
 	
 	/**
@@ -80,17 +80,17 @@ public class Trajet implements Serializable {
 	 * @return Retourne l'adresse d'arrivée.
 	 */
 
-	public String getAdresseArrivee() {
-		return adresseArrivee;
+	public String getvilleArrivee() {
+		return villeArrivee;
 	}
 	
 	/**
 	 * Prends en paramètre l'adresse d'arrivée.
-	 * @param adresseArrivee
+	 * @param villeArrivee
 	 */
 
-	public void setAdresseArrivee(String adresseArrivee) {
-		this.adresseArrivee = adresseArrivee;
+	public void setvilleArrivee(String villeArrivee) {
+		this.villeArrivee = villeArrivee;
 	}
 	
 	/**

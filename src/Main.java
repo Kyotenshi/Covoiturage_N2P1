@@ -25,11 +25,7 @@ public class Main {
 		deserialize();
 		Affichage.afficherIntro();
 		boolean quitter = false;
-		
-		/* JWindow windows = new JWindow();
-		windows.setSize(300, 200);
-		windows.setVisible(true); */
-		
+
 		while(!quitter) {
 			int action = Affichage.afficherMenu();
 			switch(action) {
@@ -59,6 +55,10 @@ public class Main {
 				case 4:
 					System.out.println("Modifier un membre");
 					appli.modifierMembre();
+					serialize();
+					break;
+				case 5:
+					appli.viderMembre();
 					serialize();
 					break;
 			}

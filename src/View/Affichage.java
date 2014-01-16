@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import model.Membre;
 import model.Trajet;
-import model.Voiture;
+
 
 /**
  * 
@@ -26,6 +26,7 @@ public class Affichage {
 			"2. Créer un trajet\n" +
 			"3. Voir les membres\n" +
 			"4. Modifier les membres\n" +
+			"5. Vider la liste des membres\n" +
 			"0. Quitter\n";
 
 	public static void afficherIntro() {
@@ -71,12 +72,12 @@ public class Affichage {
 		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);
 		String nom = inputString("Nom ?", "Votre nom", 3);
 		String prenom = inputString("Prenom ?", "Votre prenom", 3);
-		String adresse = inputString("Adresse ?", "Votre adresse", 20);
+		String adresse = inputString("Adresse ?", "Votre adresse", 3);
 		String email = inputString("Email ?", "L'email", 5);
 		String telephone = inputString("Téléphone ?", "Le téléphone", 8);
-		String nomVoiture = inputString("Nom de la voiture ?", "Nom voiture", 3);
-		String couleurVoiture = inputString("Couleur de la voiture ?", "Couleur", 3);
-		String typeVoiture = inputString("Type de voiture", "Type", 3);
+		String nomVoiture = inputString("Nom de la voiture ?", "Nom voiture (si vous en possedez une)", 3);
+		String couleurVoiture = inputString("Couleur de la voiture ?", "Couleur voiture (si vous en possedez une)", 3);
+		String typeVoiture = inputString("Type de voiture", "Type voiture (si vous en possedez une)", 3);
 		
 		return new Membre(pseudo, nom, prenom, adresse, email, telephone, nomVoiture, couleurVoiture, typeVoiture);		
 	}
@@ -86,7 +87,7 @@ public class Affichage {
             membreChoix.setPseudo(inputString("Pseudo ?", "Votre pseudo", 3));
             membreChoix.setNom(inputString("Nom ?", "Votre nom", 3));
             membreChoix.setPrenom(inputString("Prenom ?", "Votre prenom", 3));
-            membreChoix.setAdresse(inputString("Adresse ?", "Votre adresse", 20));
+            membreChoix.setAdresse(inputString("Adresse ?", "Votre adresse", 3));
             membreChoix.setEmail(inputString("Email ?", "L'email", 5));
             membreChoix.setTelephone(inputString("Téléphone ?", "Le téléphone", 8));
     }
