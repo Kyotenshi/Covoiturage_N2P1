@@ -61,6 +61,11 @@ public class Affichage {
 			System.out.println("\tAdresse : " +membre.getAdresse());
 			System.out.println("\tEmail : " + membre.getEmail());
 			System.out.println("\tTél : " + membre.getTelephone());
+    		if(membre.getEstConducteur().equals("O")){
+    			System.out.println("\tNom voiture : " + membre.getNomVoiture());
+    			System.out.println("\tCouleur voiture : " + membre.getCouleurVoiture());
+    			System.out.println("\tMarque voiture : " + membre.getTypeVoiture());
+    		}
 			System.out.println("\tTrajets : " + membre.getTrajets());
 		}
 	}
@@ -78,11 +83,16 @@ public class Affichage {
 		String adresse = inputString("Ville :", "Votre ville :", 3);
 		String email = inputString("Email :", "L'email :", 5);
 		String telephone = inputString("Téléphone :", "Le téléphone :", 8);
-		String nomVoiture = inputString("Nom de la voiture (si vous en possedez une) :", "Nom voiture (si vous en possedez une) :", 0);
-		String couleurVoiture = inputString("Couleur de la voiture (si vous en possedez une) :", "Couleur voiture (si vous en possedez une) :", 0);
-		String typeVoiture = inputString("Type de voiture (si vous en possedez une) :", "Type voiture (si vous en possedez une) :", 0);
-		
-		return new Membre(pseudo, nom, prenom, adresse, email, telephone, nomVoiture, couleurVoiture, typeVoiture);		
+		String estConducteur = inputString("Etes vous conducteur (O/N) :", "Etes vous conducteur (O/N) :", 1);
+		String nomVoiture = "Aucune voiture.";
+		String couleurVoiture = "Aucune voiture.";
+		String typeVoiture = "Aucune voiture.";
+		if(estConducteur.equals("O")){
+			nomVoiture = inputString("Nom de la voiture (si vous en possedez une) :", "Nom voiture (si vous en possedez une) :", 0);
+			couleurVoiture = inputString("Couleur de la voiture (si vous en possedez une) :", "Couleur voiture (si vous en possedez une) :", 0);
+			typeVoiture = inputString("Type de voiture (si vous en possedez une) :", "Type voiture (si vous en possedez une) :", 0);
+		}
+		return new Membre(pseudo, nom, prenom, adresse, email, telephone, estConducteur, nomVoiture, couleurVoiture, typeVoiture);		
 	}
     //Re-ecris dans le membre existant placé en parametre
     public static void afficherModifierMembre(Membre membreChoix) {
@@ -91,9 +101,19 @@ public class Affichage {
             membreChoix.setPseudo(inputString("Pseudo :", "Votre pseudo :", 3));
             membreChoix.setNom(inputString("Nom :", "Votre nom :", 3));
             membreChoix.setPrenom(inputString("Prenom :", "Votre prenom :", 3));
-            membreChoix.setAdresse(inputString("Adresse :", "Votre ville :", 3));
+            membreChoix.setAdresse(inputString("Ville :", "Votre ville :", 3));
             membreChoix.setEmail(inputString("Email :", "L'email :", 5));
             membreChoix.setTelephone(inputString("Téléphone :", "Le téléphone :", 8));
+            membreChoix.setEstConducteur(inputString("Etes vous conducteur (O/N) :", "Etes vous conducteur (O/N) :", 1));
+    		if(membreChoix.getEstConducteur().equals("O")){
+    			membreChoix.setNomVoiture(inputString("Nom de la voiture (si vous en possedez une) :", "Nom de la voiture (si vous en possedez une) :", 0));
+    			membreChoix.setCouleurVoiture(inputString("Couleur de la voiture (si vous en possedez une) :", "Couleur de la voiture (si vous en possedez une) :", 0));
+    			membreChoix.setTypeVoiture(inputString("Type de voiture (si vous en possedez une) :", "Type de voiture (si vous en possedez une) :", 0));
+    		}else{
+    			membreChoix.setNomVoiture("Aucune voiture.");
+    			membreChoix.setCouleurVoiture("Aucune voiture.");
+    			membreChoix.setTypeVoiture("Aucune voiture.");
+    		}
     	}else{
     		System.out.println("Le membre n'existe pas.");
     	}

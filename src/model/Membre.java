@@ -22,6 +22,7 @@ public class Membre implements Serializable {
 	
 	private List<Trajet> trajets;
 	
+	private String estConducteur;
 	private String nomVoiture;
 	private String couleurVoiture;
 	private String typeVoiture;
@@ -38,8 +39,8 @@ public class Membre implements Serializable {
 	 * @param nomVoiture 
 	 * @param typeVoiture 
 	 */
-	
-	public Membre(String pseudo, String nom, String prenom, String adresse, String email, String telephone, String couleurVoiture, String nomVoiture, String typeVoiture) {
+
+	public Membre(String pseudo, String nom, String prenom, String adresse, String email, String telephone, String estConducteur, String nomVoiture, String couleurVoiture, String typeVoiture) {
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -48,11 +49,14 @@ public class Membre implements Serializable {
 		this.telephone = telephone;
 		this.trajets = new ArrayList<Trajet>();
 		
+		this.estConducteur = estConducteur;
 		this.nomVoiture = nomVoiture;
 		this.setCouleurVoiture(couleurVoiture);
 		this.setTypeVoiture(typeVoiture);
 	}
 	
+
+
 	/**
 	 * 
 	 * @param trajet
@@ -194,6 +198,14 @@ public class Membre implements Serializable {
 
 	public void setTrajets(List<Trajet> trajets) {
 		this.trajets = trajets;
+	}
+	
+	public String getEstConducteur() {
+		return estConducteur;
+	}
+
+	public void setEstConducteur(String estConducteur) {
+		this.estConducteur = estConducteur;
 	}
 
 	public String getNomVoiture() {
