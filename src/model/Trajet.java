@@ -7,7 +7,8 @@ import java.util.List;
 /**
  * 
  * @author Kyo (Hennache Johan)
- *
+ * @author Kotasan (Ghesquiere Jerome)
+ * 
  */
 
 public class Trajet implements Serializable {
