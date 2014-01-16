@@ -42,7 +42,8 @@ Contributions des collaborateurs :
 	Affichage.java (affichageIntro, afficherMenu, afficherCreerMembre, afficherMembre, afficherCreerTrajet, afficherAjouterTrajet, inputString, inputNumber) 
 	Membre.java 
 	Trajet.java 
-	Application.java (Appli, ajouterMembre, modifierMembre) 
+	Application.java (Appli, ajouterMembre, modifierMembre)
+	Ecriture Readme.txt et UML 
 
  - Ghesquière Jérôme (Kotasan sur GitHub) : 
 	Main.java 
