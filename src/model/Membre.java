@@ -64,6 +64,15 @@ public class Membre implements Serializable {
 	
 	/**
 	 * 
+	 * Vide la liste des trajets d'un membre
+	 */
+	
+	public void viderListeTrajets() {
+		trajets.clear();
+	}
+	
+	/**
+	 * 
 	 * @return Retourne le pseudo du membre.
 	 */
 	

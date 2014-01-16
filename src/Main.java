@@ -57,8 +57,14 @@ public class Main {
 					appli.modifierMembre();
 					serialize();
 					break;
+				//Dans le cas où l'utilisateur entre la valeur 5, le programme vide la liste des membres.
 				case 5:
-					appli.viderMembre();
+					appli.viderListeMembre();
+					serialize();
+					break;
+				//Dans le cas où l'utilisateur entre la valeur 6, le programme vide la liste des trajets d'un membre.
+				case 6:
+					appli.viderTrajet();
 					serialize();
 					break;
 			}

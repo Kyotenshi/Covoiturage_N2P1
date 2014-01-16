@@ -27,6 +27,7 @@ public class Affichage {
 			"3. Voir les membres\n" +
 			"4. Modifier les membres\n" +
 			"5. Vider la liste des membres\n" +
+			"6. Vider la liste des trajets d'un membre\n" +
 			"0. Quitter\n";
 
 	public static void afficherIntro() {
@@ -40,7 +41,7 @@ public class Affichage {
 	
 	public static int afficherMenu() {
 		System.out.print(menu);
-		return inputNumber("Votre choix");		
+		return inputNumber("Votre choix :");		
 	}
 
 	/**
@@ -49,9 +50,11 @@ public class Affichage {
 	 */
 	
 	public static void afficherMembres(List<Membre> membres) {
+		int i=0;
 		System.out.println("Les Membres");
 		for(Membre membre: membres) {
-			System.out.println("1. -------------------- ");
+			i++;
+			System.out.println(i + ". -------------------- ");
 			System.out.println("\tPseudo : " + membre.getPseudo());
 			System.out.println("\tNom : " + membre.getNom());
 			System.out.println("\tPrenom : " + membre.getPrenom());
@@ -68,47 +71,54 @@ public class Affichage {
 	 */
 
 	public static Membre afficherCreerMembre() {
-		System.out.println("Création d'un compte\n");
-		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);
-		String nom = inputString("Nom ?", "Votre nom", 3);
-		String prenom = inputString("Prenom ?", "Votre prenom", 3);
-		String adresse = inputString("Adresse ?", "Votre adresse", 3);
-		String email = inputString("Email ?", "L'email", 5);
-		String telephone = inputString("Téléphone ?", "Le téléphone", 8);
-		String nomVoiture = inputString("Nom de la voiture ?", "Nom voiture (si vous en possedez une)", 3);
-		String couleurVoiture = inputString("Couleur de la voiture ?", "Couleur voiture (si vous en possedez une)", 3);
-		String typeVoiture = inputString("Type de voiture", "Type voiture (si vous en possedez une)", 3);
+		System.out.println("Création d'un compte :\n");
+		String pseudo = inputString("Pseudo :", "Votre pseudo :", 3);
+		String nom = inputString("Nom :", "Votre nom :", 3);
+		String prenom = inputString("Prenom :", "Votre prenom :", 3);
+		String adresse = inputString("Ville :", "Votre ville :", 3);
+		String email = inputString("Email :", "L'email :", 5);
+		String telephone = inputString("Téléphone :", "Le téléphone :", 8);
+		String nomVoiture = inputString("Nom de la voiture (si vous en possedez une) :", "Nom voiture (si vous en possedez une) :", 0);
+		String couleurVoiture = inputString("Couleur de la voiture (si vous en possedez une) :", "Couleur voiture (si vous en possedez une) :", 0);
+		String typeVoiture = inputString("Type de voiture (si vous en possedez une) :", "Type voiture (si vous en possedez une) :", 0);
 		
 		return new Membre(pseudo, nom, prenom, adresse, email, telephone, nomVoiture, couleurVoiture, typeVoiture);		
 	}
     //Re-ecris dans le membre existant placé en parametre
     public static void afficherModifierMembre(Membre membreChoix) {
+    	if(membreChoix != null){
             System.out.println("Modification d'un compte\n");
-            membreChoix.setPseudo(inputString("Pseudo ?", "Votre pseudo", 3));
-            membreChoix.setNom(inputString("Nom ?", "Votre nom", 3));
-            membreChoix.setPrenom(inputString("Prenom ?", "Votre prenom", 3));
-            membreChoix.setAdresse(inputString("Adresse ?", "Votre adresse", 3));
-            membreChoix.setEmail(inputString("Email ?", "L'email", 5));
-            membreChoix.setTelephone(inputString("Téléphone ?", "Le téléphone", 8));
+            membreChoix.setPseudo(inputString("Pseudo :", "Votre pseudo :", 3));
+            membreChoix.setNom(inputString("Nom :", "Votre nom :", 3));
+            membreChoix.setPrenom(inputString("Prenom :", "Votre prenom :", 3));
+            membreChoix.setAdresse(inputString("Adresse :", "Votre ville :", 3));
+            membreChoix.setEmail(inputString("Email :", "L'email :", 5));
+            membreChoix.setTelephone(inputString("Téléphone :", "Le téléphone :", 8));
+    	}else{
+    		System.out.println("Le membre n'existe pas.");
+    	}
     }
     
     //Ajoute le trajet dans le membre existant placé en parametre
     public static void afficherAjouterTrajet(Membre membreChoix) {
-            System.out.println("Ajout d'un trajet\n");
+    	if(membreChoix != null){
             Trajet t = afficherCreerTrajet();
             membreChoix.getTrajets().add(t);
+    	}else{
+    		System.out.println("Le membre n'existe pas.");
+    	}
     }
 
     public static Trajet afficherCreerTrajet() {
             System.out.println("Création d'un trajet\n");
-            String adresseDepart = inputString("Adresse de départ ?", "Votre adresse de départ", 20);
-            String adresseArrivee =  inputString("Adresse d'arrivée ?", "Votre addresse d'arrivée", 20);
-            String description = inputString("Descrption du trajet ?", "Votre description du trajet", 20);
-            String heureDepart = inputString("Heure de départ ?", "Votre heure de départ", 5);
-            String heureArrivee = inputString("Heure d'arrivée ?", "Votre heure d'arrivée", 5);
-            int nbPlaces = inputNumber("Nombre de places ?");
-            String conducteur = inputString("Conducteur ?", "Votre conducteur", 3);
-            String voiture = inputString("Voiture ?", "Votre voiture", 2);
+            String adresseDepart = inputString("Adresse de départ :", "Votre ville de départ :", 3);
+            String adresseArrivee =  inputString("Adresse d'arrivée :", "Votre ville d'arrivée :", 3);
+            String description = inputString("Descrption du trajet :", "Votre description du trajet :", 0);
+            String heureDepart = inputString("Heure de départ :", "Votre heure de départ :", 5);
+            String heureArrivee = inputString("Heure d'arrivée :", "Votre heure d'arrivée :", 5);
+            int nbPlaces = inputNumber("Nombre de places :");
+            String conducteur = inputString("Conducteur :", "Votre conducteur :", 3);
+            String voiture = inputString("Voiture :", "Votre voiture :", 2);
             return new Trajet(adresseDepart, adresseArrivee, description, heureDepart, heureArrivee, nbPlaces, conducteur, voiture);
 
     }
@@ -163,7 +173,7 @@ public class Affichage {
 	 */
 
 	public static String demanderMembre() {
-		String pseudo = inputString("Pseudo ?", "Votre pseudo", 3);
+		String pseudo = inputString("Pseudo :", "Votre pseudo", 3);
 		return pseudo;
 
 	}
