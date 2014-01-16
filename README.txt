@@ -49,3 +49,6 @@ Contributions des collaborateurs :
 	Affichage.java (afficherModifierMembre, afficherCreerTrajet) 
 	Membre.java (Appli, ajouterMembre, modifierMembre, demanderMembre)
 	Trajet.java Application.java (ajouterTrajet)
+
+Concernant le groupe en général, nous étions à l'origine avec Bisiaux Guillaume, qui change de formation dès la fin de ce semestre et a donc arrêté les cours peu après la formation des groupes.
+Nous n'étions donc que deux durant une très grande partie du Projet, Guillaume n'ayant même jamais regardé de près ou de loin l'avancement du projet.
