@@ -25,11 +25,7 @@ public class Main {
 		deserialize();
 		Affichage.afficherIntro();
 		boolean quitter = false;
-		
-		/* JWindow windows = new JWindow();
-		windows.setSize(300, 200);
-		windows.setVisible(true); */
-		
+
 		while(!quitter) {
 			int action = Affichage.afficherMenu();
 			switch(action) {
@@ -59,6 +55,16 @@ public class Main {
 				case 4:
 					System.out.println("Modifier un membre");
 					appli.modifierMembre();
+					serialize();
+					break;
+				//Dans le cas où l'utilisateur entre la valeur 5, le programme vide la liste des membres.
+				case 5:
+					appli.viderListeMembre();
+					serialize();
+					break;
+				//Dans le cas où l'utilisateur entre la valeur 6, le programme vide la liste des trajets d'un membre.
+				case 6:
+					appli.viderTrajet();
 					serialize();
 					break;
 			}

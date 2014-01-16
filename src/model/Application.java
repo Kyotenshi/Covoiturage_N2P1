@@ -27,37 +27,45 @@ public class Application implements Serializable {
 		return membres;
 	}
 	
-	public void ajouterMembre(Membre membre) {
-		membres.add(membre);
+	public void ajouterMembre(Membre membreChoix) {
+    	if(membreChoix != null){
+    		membres.add(membreChoix);
+    		System.out.println("Le membre : " + membreChoix.getPseudo() + " a été ajouté.");
+    	}else{
+    		System.out.println("Le membre n'existe pas.");
+    	}
 	}
 	
+	public void viderListeMembre() {
+		membres.clear();
+		System.out.println("La liste des membres a été vidée.");
+	}
 	
-    public void modifierMembre(){
-    	//Demande du pseudo du membre, si il existe, alors la méthode retourne le pseudo du membre sous forme de String
+	public Membre rechercheMembre(){
+    	//Demande du pseudo du membre, si il existe, alors la méthode retourne le membre
     	String pseudo = Affichage.demanderMembre();
-	
     	//Pour chaque membre dans la liste
     	for(Membre membre : membres) {
 	        //On test si le pseudo (String) correspond a l'un d'entre eux
 	        if(pseudo.equals(membre.getPseudo())){
-	                System.out.println("Le membre existe !");
-	        Affichage.afficherModifierMembre(membre);
+	        	return membre;
 	        }
     	}
+		return null;
+	}
+	
+    public void modifierMembre(){
+    	Affichage.afficherModifierMembre(rechercheMembre());
     }
     
     public void ajouterTrajet(){
-		//Demande du pseudo du membre, si il existe, alors la méthode retourne le pseudo du membre sous forme de String
-		String pseudo = Affichage.demanderMembre();
-		
-		//Pour chaque membre dans la liste
-		for(Membre membre : membres) {
-		        //On test si le pseudo (String) correspond a l'un d'entre eux
-		        if(pseudo.equals(membre.getPseudo())){
-		                System.out.println("Le membre existe !");
-		        Affichage.afficherAjouterTrajet(membre);
-		    }
-		}
+    	Affichage.afficherAjouterTrajet(rechercheMembre());
+    	System.out.println("Le trajet a été ajouter.");
+    }
+    
+    public void viderTrajet(){
+    	rechercheMembre().viderListeTrajets();
+		System.out.println("Liste des trajets vidée.");
     }
     
 }
